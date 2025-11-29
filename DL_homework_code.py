@@ -71,7 +71,7 @@ class DNN:
             
             self.activations.append(a)
             
-        return
+        return a
 
     def backward(self, target):
         """역전파: PDF의 Backpropagation 알고리즘 구현"""
@@ -256,6 +256,8 @@ for epoch in range(exp1_epochs):
 
 #%%
 # [실험 1 결과 시각화] 선 그래프
+import matplotlib.pyplot as plt
+
 plt.figure(figsize=(10, 5))
 plt.plot(train_errors, label='Training Error')
 plt.plot(val_errors, label='Validation Error')
